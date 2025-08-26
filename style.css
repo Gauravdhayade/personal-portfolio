@@ -1,57 +1,156 @@
-.container {
-    background: linear-gradient(to bottom right, #dbe6e4, #9cc7b8);
-    font-family: 'Times New Roman', Times, serif;
-    margin: 50px auto;
-    padding: 30px 20px;
-    max-width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 1px solid #b5b5b5;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-h1 {
-   
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #0f070afd;
-}
-
+/* Body */
 body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #f0f4f9, #dbe6f6);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  transition: all 0.3s ease;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* Container */
+.container {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #ffffffc5;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  backdrop-filter: blur(6px);
+}
+.container h1 {
+  font-size: 2.5rem;
+  color: #0f3057;
+  margin-bottom: 10px;
+}
+.container p { margin: 6px 0; }
+
+/* Links */
+a {
+  color: #0077b6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover { color: #023e8a; text-decoration: underline; }
+
+/* Sections */
 section {
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 8px;
+  background: #fff;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  max-width: 900px;
 }
-
+section:hover { transform: translateY(-5px); }
 h2 {
-    color: #333;
+  margin-bottom: 15px;
+  color: #1d3557;
+  font-size: 1.6rem;
+  border-left: 5px solid #457b9d;
+  padding-left: 10px;
 }
 
-ul {
-    list-style-type: square;
-    padding-left: 20px;
+/* Lists */
+ul { list-style: none; }
+ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+ul li::before {
+  content: "✔";
+  color: #2a9d8f;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
+/* Skills */
+.skills ul li strong { color: #e76f51; }
+
+/* Projects */
+.projects ul li {
+  font-weight: 500;
+  color: #264653;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s;
+}
+.projects ul li:hover {
+  transform: scale(1.05);
+  color: #e63946;
+}
+
+/* Contact */
+.contact p { margin: 8px 0; }
+.contact a { font-weight: bold; }
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #222;
-    color: #ccc;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  background: linear-gradient(90deg, #457b9d, #1d3557);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #1d1d1d, #2b2b2b);
+  color: #e0e0e0;
+}
+body.dark-mode section {
+  background: #2a2a2a;
+  box-shadow: 0 6px 18px rgba(255,255,255,0.05);
+}
+body.dark-mode h2 {
+  color: #f1faee;
+  border-left-color: #a8dadc;
+}
+body.dark-mode a { color: #00b4d8; }
+body.dark-mode a:hover { color: #90e0ef; }
+body.dark-mode footer {
+  background: linear-gradient(90deg, #000, #333);
+}
+body.dark-mode ul li::before { color: #06d6a0; }
+
+/* Toggle Button */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1d3557;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+#theme-toggle:hover { background: #457b9d; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  body { padding: 10px; }
+  .container h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
 }
