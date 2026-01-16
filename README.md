@@ -2,7 +2,7 @@
 A responsive and modern Personal Portfolio Website designed to showcase my skills, projects, experience, and contact details. This portfolio highlights my journey as a Java Full Stack Developer, featuring real-world projects, GitHub repositories, and professional background.
 
 📌 Live Preview:-
-🔗 Live Demo: (https://gauravdhayade.github.io/peronal-portfolio/)
+🔗 Live Demo: (https://gauravdhayade.github.io/personal-portfolio/)
 
 🛠️ Tech Stack:-
 
