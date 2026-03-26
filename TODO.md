@@ -11,10 +11,26 @@ Status: In Progress
 - [x] Delete CRA boilerplate: `src/App.test.js`, `src/setupTests.js`, `src/logo.svg`, `src/reportWebVitals.js`
 - [x] Delete duplicate: `personal-portfolio/` folder
 
-## 3. Project Structure Optimization
+## 3. Project Structure Optimization ✅
 
-- [ ] Create `src/utils/ErrorBoundary.jsx`
-- [ ] Verify folder structure
+- [x] Created `src/utils/ErrorBoundary.jsx`
+- [x] Folder structure verified (components/context/data/utils)
+
+## 4. Code Enhancements
+
+- [ ] App.js: Add React.lazy/Suspense + ErrorBoundary
+- [ ] Projects.jsx: Add memoization + API cache
+- [ ] Static components: Add React.memo (About, Education, Skills)
+
+## 5. Package Cleanup
+
+- [ ] package.json: Remove test deps
+- [ ] `npm install`
+
+## 6. Validation
+
+- [ ] `npm start` → Zero console errors
+- [ ] `npm run build`
 
 ## 3. Project Structure Optimization
 
