@@ -6,14 +6,15 @@ Status: In Progress
 
 - [x] `git add . && git commit -m "backup: pre-blackboxai-cleanup"`
 
-## 2. Delete Unused Files
+## 2. Delete Unused Files ✅
 
-- [ ] Delete CRA boilerplate:
-  - `src/App.test.js`
-  - `src/setupTests.js`
-  - `src/logo.svg`
-  - `src/reportWebVitals.js`
-- [ ] Delete duplicate: `personal-portfolio/` entire folder
+- [x] Delete CRA boilerplate: `src/App.test.js`, `src/setupTests.js`, `src/logo.svg`, `src/reportWebVitals.js`
+- [x] Delete duplicate: `personal-portfolio/` folder
+
+## 3. Project Structure Optimization
+
+- [ ] Create `src/utils/ErrorBoundary.jsx`
+- [ ] Verify folder structure
 
 ## 3. Project Structure Optimization
 
