@@ -8,12 +8,9 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
+    { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Education", href: "#education" },
     { name: "Projects", href: "#projects" },
-    { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -25,20 +22,20 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
-        <a href="#hero" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <a href="#hero" className="text-2xl md:text-3xl font-black bg-gradient-to-r from-white via-gray-100 to-neutral-200 bg-clip-text text-transparent drop-shadow-2xl hover:scale-105 transition-transform">
           Gaurav Dhayade
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-300 relative group"
+              className="relative font-semibold text-lg text-neutral-300 hover:text-primary transition-all duration-300 group"
             >
               {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-primary rounded-full group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
         </div>
@@ -46,18 +43,18 @@ const Navbar = () => {
         {/* Theme Toggle Desktop */}
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:scale-110 transition-all duration-300 md:ml-4"
+          className="p-3 rounded-xl glass hover:scale-110 hover:bg-white/20 transition-all duration-300 hidden sm:block ml-4"
           title="Toggle theme"
         >
-          {darkMode ? <FiSun className="w-5 h-5 text-yellow-500" /> : <FiMoon className="w-5 h-5 text-gray-700 dark:text-gray-300" />}
+          {darkMode ? <FiSun className="w-5 h-5 text-yellow-400" /> : <FiMoon className="w-5 h-5 text-neutral-400" />}
         </button>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:scale-110 transition-all duration-300"
+          className="lg:hidden p-3 rounded-xl glass hover:scale-110 hover:bg-white/20 transition-all duration-300"
         >
-          {mobileOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+          {mobileOpen ? <FiX className="w-6 h-6 text-white" /> : <FiMenu className="w-6 h-6 text-white" />}
         </button>
       </div>
 
@@ -66,25 +63,33 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-gray-200 dark:border-gray-800"
+          exit={{ opacity: 0, height: 0 }}
+          className="lg:hidden glass border-t border-neutral-800/50"
         >
-          <div className="flex flex-col space-y-4 p-6">
+          <div className="flex flex-col space-y-4 p-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition duration-300"
+                className="py-3 px-4 font-semibold text-neutral-300 hover:text-primary hover:bg-white/10 rounded-xl transition-all duration-300 text-lg"
               >
                 {link.name}
               </a>
             ))}
             <button
               onClick={toggleTheme}
-              className="flex items-center space-x-2 py-2 font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              className="flex items-center gap-3 py-3 px-4 font-semibold text-neutral-300 hover:text-primary hover:bg-white/10 rounded-xl transition-all duration-300"
             >
-              <span>{darkMode ? "Light" : "Dark"} Mode</span>
-              {darkMode ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+              {darkMode ? (
+                <>
+                  <FiSun className="w-5 h-5" /> Light Mode
+                </>
+              ) : (
+                <>
+                  <FiMoon className="w-5 h-5" /> Dark Mode
+                </>
+              )}
             </button>
           </div>
         </motion.div>
@@ -94,3 +99,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
